@@ -256,9 +256,9 @@
                   >
                     <div class="icon-bg-desktop">
                       <img
-                        id="icon-img-qq"
+                        id="icon-img-wx"
                         src=""
-                        alt="微信"
+                        alt="wx"
                       />
                     </div>
                     <span class="label">微信</span>
@@ -8944,7 +8944,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
           <!-- 歌曲封面 -->
           <img
             id="ls-album-cover"
-            src="https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png"
+            src=""
             alt="歌曲封面"
             style="
               width: 100%;
@@ -11451,13 +11451,13 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
         <div class="weibo-profile-header">
           <img
             id="weibo-char-background-img"
-            src="https://i.postimg.cc/mk93Y3j1/weibo-bg-default.jpg"
+            src=""
             class="weibo-background"
           />
           <div class="weibo-avatar-container">
             <img
               id="weibo-char-avatar-img"
-              src="https://files.catbox.moe/q6z5fc.jpeg"
+              src=""
               class="weibo-avatar"
             />
             <img
@@ -13087,7 +13087,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
               <div class="avatar-upload">
                 <img
                   id="tukey-user-avatar-preview"
-                  src="https://i.postimg.cc/PxZrFFFL/o-o-1.jpg"
+                  src=""
                 />
                 <button
                   onclick="
@@ -14832,7 +14832,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
               >
                 <img
                   id="new-couple-my-avatar-preview"
-                  src="https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png"
+                  src=""
                   style="
                     width: 100%;
                     height: 100%;
@@ -14868,7 +14868,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
               >
                 <img
                   id="new-couple-char-avatar-preview"
-                  src="https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png"
+                  src=""
                   style="
                     width: 100%;
                     height: 100%;
@@ -15038,7 +15038,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                 <!-- 封面图 -->
                 <img
                   id="pomo-music-cover"
-                  src="https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png"
+                  src=""
                 />
               </div>
             </div>
@@ -16327,11 +16327,10 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
         activeAlbumId: null,
       };
 
-      const defaultAvatar = "https://i.postimg.cc/PxZrFFFL/o-o-1.jpg";
-      const defaultMyGroupAvatar = "https://i.postimg.cc/cLPP10Vm/4.jpg";
-      const defaultGroupMemberAvatar = "https://i.postimg.cc/VkQfgzGJ/1.jpg";
-      const defaultGroupAvatar =
-        "https://i.postimg.cc/gc3QYCDy/1-NINE7-Five.jpg";
+      const defaultAvatar = "";
+      const defaultMyGroupAvatar = "";
+      const defaultGroupMemberAvatar = "";
+      const defaultGroupAvatar ="";
 
       const GEMINI_API_URL =
         "https://generativelanguage.googleapis.com/v1beta/models";
@@ -16903,7 +16902,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                 id: song.id,
                 cover:
                   song.cover ||
-                  "https://i.postimg.cc/pT2xKzP-album-cover-placeholder.png",
+                  "",
                 source: "netease",
               }))
               .slice(0, 15);
@@ -16960,7 +16959,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                   lyric_id: song.lyric_id || song.id,
                   cover:
                     song.pic ||
-                    "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png",
+                    "",
                   // 这里的 source 是给 GD API 内部使用的，我们用一个新字段来标记 API 提供商
                   originalSource: song.source,
                   apiProvider: "gdstudio", // 标记这是来自GD音乐台的结果
@@ -16992,7 +16991,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                 id: song.id,
                 cover:
                   song.cover ||
-                  "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png",
+                  "",
                 source: "tencent", // 标记来源
               }))
               .slice(0, 5); // 只取前5条结果
@@ -17472,11 +17471,11 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 			}
 			/* “聊天设置”按钮 */
 			#chat-settings-btn img {
-			  content: url('https://i.postimg.cc/bvPq64cv/CCA834-BA-5-A90-408-D-94-FA-7-EE156-B6-A765.png');
+			  content: url('https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-19.jpg');
 			}
 			/* “触发API回复”按钮 */
 			#wait-reply-btn img {
-			  content: url('https://i.postimg.cc/q72zq80N/ECE92-BBC-BE57-48-E9-BB2-C-345-B6019-C4-B2.png');
+			  content: url('https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-24.jpg');
 			}
 			/* “发送”按钮 (设为图片形式) */
 			#send-btn {
@@ -17659,26 +17658,26 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 			`;
 
         const DEFAULT_APP_ICONS = {
-          "world-book": "https://i.postimg.cc/HWf1JKzn/IMG-6435.jpg",
-          qq: "https://i.postimg.cc/MTC3Tkw8/IMG-6436.jpg",
-          "api-settings": "https://i.postimg.cc/MK8rJ8t7/IMG-6438.jpg",
-          wallpaper: "https://i.postimg.cc/T1j03pQr/IMG-6440.jpg",
-          font: "https://i.postimg.cc/pXxk1JXk/IMG-6442.jpg",
-          "check-phone": "https://i.postimg.cc/RVwpwr0r/IMG-8348.jpg",
-          weibo: "https://i.postimg.cc/PqBY5wBq/weibo-icon.png",
-          forum: "https://i.postimg.cc/pr0T3WfC/douban-icon.png",
-          "lovers-space": "https://i.postimg.cc/d1wZ39xW/lovers-space-icon.png",
-          "game-hall": "https://i.postimg.cc/P5gL5z2g/game-controller-icon.png",
-          "x-social": "https://i.postimg.cc/8P1H0vQ8/x-logo.png",
-          taobao: "https://i.postimg.cc/k47tXg1j/taologo.png",
-          "date-a-live": "https://i.postimg.cc/Kjdss1j9/1761142686734.png",
-          "tukey-accounting": "https://i.postimg.cc/k4fZKVXP/tu-tu.png",
-          "kk-checkin": "https://i.postimg.cc/MGwrL0nf/kitty.png",
-          studio: "https://i.postimg.cc/W3sLz11s/clapperboard-icon.png",
+          "world-book": "",
+          wx: "",
+          "api-settings": "",
+          wallpaper: "",
+          font: "",
+          "check-phone": "",
+          weibo: "",
+          forum: "",
+          "lovers-space": "",
+          "game-hall": "",
+          "x-social": "",
+          taobao: "",
+          "date-a-live": "",
+          "tukey-accounting": "",
+          "kk-checkin": "",
+          studio: "",
         };
 
         const DEFAULT_APP_LABELS = {
-          qq: "QQ",
+          wx: "微信",
           "world-book": "世界书",
           "api-settings": "API设置",
           wallpaper: "外观设置",
@@ -18913,8 +18912,8 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                 : `<img src="${post.imageUrl}" class="chat-image">`;
             } else if (post.type === "text_image") {
               contentHtml = publicTextHtml
-                ? `${publicTextHtml}<div style="margin-top:10px;"><img src="https://i.postimg.cc/KYr2qRCK/1.jpg" class="chat-image" style="cursor: pointer;" data-hidden-text="${post.hiddenContent}"></div>`
-                : `<img src="https://i.postimg.cc/KYr2qRCK/1.jpg" class="chat-image" style="cursor: pointer;" data-hidden-text="${post.hiddenContent}">`;
+                ? `${publicTextHtml}<div style="margin-top:10px;"><img src="https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg" class="chat-image" style="cursor: pointer;" data-hidden-text="${post.hiddenContent}"></div>`
+                : `<img src="https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg" class="chat-image" style="cursor: pointer;" data-hidden-text="${post.hiddenContent}">`;
             } else if (post.type === "realimag") {
               // RealImag真实图片动态渲染（支持多图布局）
               const imageUrls =
@@ -18929,7 +18928,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                 imageUrls.forEach((url, index) => {
                   imagesHtml += `<img src="${url}" class="realimag-image" alt="图片${
                     index + 1
-                  }" loading="lazy" onerror="this.src='https://i.postimg.cc/KYr2qRCK/1.jpg'; this.alt='图片加载失败';">`;
+                  }" loading="lazy" onerror="this.src='https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg'; this.alt='图片加载失败';">`;
                 });
                 imagesHtml += "</div>";
 
@@ -18951,7 +18950,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                 imageUrls.forEach((url, index) => {
                   imagesHtml += `<img src="${url}" class="naiimag-image" alt="图片${
                     index + 1
-                  }" loading="lazy" onerror="this.src='https://i.postimg.cc/KYr2qRCK/1.jpg'; this.alt='图片加载失败';">`;
+                  }" loading="lazy" onerror="this.src='https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg'; this.alt='图片加载失败';">`;
                 });
                 imagesHtml += "</div>";
 
@@ -19195,8 +19194,8 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                   : `<img src="${post.imageUrl}" class="chat-image">`;
               } else if (post.type === "text_image") {
                 contentHtml = publicTextHtml
-                  ? `${publicTextHtml}<div style="margin-top:10px;"><img src="https://i.postimg.cc/KYr2qRCK/1.jpg" class="chat-image" style="cursor: pointer;" data-hidden-text="${post.hiddenContent}"></div>`
-                  : `<img src="https://i.postimg.cc/KYr2qRCK/1.jpg" class="chat-image" style="cursor: pointer;" data-hidden-text="${post.hiddenContent}">`;
+                  ? `${publicTextHtml}<div style="margin-top:10px;"><img src="https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg" class="chat-image" style="cursor: pointer;" data-hidden-text="${post.hiddenContent}"></div>`
+                  : `<img src="https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg" class="chat-image" style="cursor: pointer;" data-hidden-text="${post.hiddenContent}">`;
               } else if (post.type === "realimag") {
                 // RealImag真实图片动态渲染（支持多图布局）
                 const imageUrls =
@@ -19211,7 +19210,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                   imageUrls.forEach((url, index) => {
                     imagesHtml += `<img src="${url}" class="realimag-image" alt="图片${
                       index + 1
-                    }" loading="lazy" onerror="this.src='https://i.postimg.cc/KYr2qRCK/1.jpg'; this.alt='图片加载失败';">`;
+                    }" loading="lazy" onerror="this.src='https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg'; this.alt='图片加载失败';">`;
                   });
                   imagesHtml += "</div>";
 
@@ -19233,7 +19232,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                   imageUrls.forEach((url, index) => {
                     imagesHtml += `<img src="${url}" class="naiimag-image" alt="图片${
                       index + 1
-                    }" loading="lazy" onerror="this.src='https://i.postimg.cc/KYr2qRCK/1.jpg'; this.alt='图片加载失败';">`;
+                    }" loading="lazy" onerror="this.src='https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg'; this.alt='图片加载失败';">`;
                   });
                   imagesHtml += "</div>";
 
@@ -24024,7 +24023,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
             bubble.classList.add("is-ai-image");
             const altText =
               msg.type === "user_photo" ? "用户描述的照片" : "AI生成的图片";
-            contentHtml = `<img src="https://i.postimg.cc/KYr2qRCK/1.jpg" class="ai-generated-image" alt="${altText}" data-description="${msg.content}">`;
+            contentHtml = `<img src="https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg" class="ai-generated-image" alt="${altText}" data-description="${msg.content}">`;
           } else if (msg.type === "voice_message") {
             bubble.classList.add("is-voice-message");
 
@@ -24441,7 +24440,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
             bubble.classList.add("is-realimag", "is-card-like");
             contentHtml = `<img src="${
               msg.imageUrl
-            }" class="realimag-image" alt="NovelAI图片分享" loading="lazy" onerror="this.src='https://i.postimg.cc/KYr2qRCK/1.jpg'; this.alt='图片加载失败';" title="${
+            }" class="realimag-image" alt="NovelAI图片分享" loading="lazy" onerror="this.src='https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg'; this.alt='图片加载失败';" title="${
               msg.fullPrompt || msg.prompt || "NovelAI生成"
             }">`;
           } else {
@@ -41900,7 +41899,7 @@ ${libraryList}
             itemEl.className = "character-album-item";
             itemEl.style.position = "relative";
             itemEl.innerHTML = `
-			            <img src="https://i.postimg.cc/KYr2qRCK/1.jpg" alt="文字图">
+			            <img src="https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-28.jpg" alt="文字图">
 			            <button class="item-delete-btn" data-type="photoAlbum" data-index="${index}" style="top: 10px; right: 10px; z-index: 1;">×</button>
 			        `;
             itemEl.addEventListener("click", (e) => {
