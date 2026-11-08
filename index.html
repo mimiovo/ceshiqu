@@ -24137,7 +24137,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
             contentHtml = `
 			            <div class="waimai-card">
 			                <div class="waimai-header">
-			                    <img src="https://files.catbox.moe/mq179k.png" class="icon" alt="Meituan Icon">
+			                    <img src="https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-25.jpg" class="icon" alt="Meituan Icon">
 			                    <div class="title-group">
 			                        <span class="brand">美团外卖</span><span class="separator">|</span><span>外卖美食</span>
 			                    </div>
@@ -24243,7 +24243,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
             contentHtml = `
 			        <div class="red-packet-card ${cardClass}">
 			            <div class="rp-header">
-			                <img src="https://files.catbox.moe/lo9xhc.png" class="rp-icon">
+			                <img src="https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-26.jpg" class="rp-icon">
 			                <span class="rp-greeting">${msg.greeting || "恭喜发财，大吉大利！"}</span>
 			            </div>
 			            <div class="rp-type">${typeText}</div>
@@ -28010,7 +28010,7 @@ ${libraryList}
                     if (msgData.decision === "accept") {
                       chat.loversSpaceData = {
                         background:
-                          "https://i.postimg.cc/k495F4W5/profile-banner.jpg",
+                          "",
                         relationshipStartDate: null,
                         moments: [],
                         photos: [],
@@ -28572,7 +28572,7 @@ ${libraryList}
                       // 同意后，为这个角色创建情侣空间数据
                       chat.loversSpaceData = {
                         background:
-                          "https://i.postimg.cc/k495F4W5/profile-banner.jpg",
+                          "",
                         relationshipStartDate: null,
                         moments: [],
                         photos: [],
@@ -30841,12 +30841,12 @@ ${libraryList}
             !state.musicState.isActive ||
             state.musicState.activeChatId !== chatId
           ) {
-            iconImg.src = "https://i.postimg.cc/CxjpF6gK/yi-qi-ting.png";
+            iconImg.src = "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-18.jpg";
             iconImg.className = "";
             return;
           }
           iconImg.src =
-            "https://cdn.jsdelivr.net.cn/gh/qdqqd/tc_temp/jli60izy2n.png";
+            "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-19.jpg";
           iconImg.classList.add("rotating");
           if (state.musicState.isPlaying) iconImg.classList.remove("paused");
           else iconImg.classList.add("paused");
@@ -30894,12 +30894,12 @@ ${libraryList}
             artistEl.textContent = track.artist;
             albumCoverEl.src =
               track.cover ||
-              "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png";
+              "";
           } else {
             titleEl.textContent = "请添加歌曲";
             artistEl.textContent = "...";
             albumCoverEl.src =
-              "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png";
+              "";
           }
 
           // 3. 控制播放/暂停按钮和头像闪烁
@@ -49416,10 +49416,10 @@ ${libraryList}
               nickname: qzoneSettingsFromDB?.nickname || "你的昵称",
               avatar:
                 qzoneSettingsFromDB?.avatar ||
-                "https://files.catbox.moe/q6z5fc.jpeg",
+                "",
               banner:
                 qzoneSettingsFromDB?.banner ||
-                "https://files.catbox.moe/r5heyt.gif",
+                "",
             };
 
             const transformedDoubanPosts = qzonePostsFromDB
@@ -50193,41 +50193,41 @@ ${libraryList}
             id: "first_heartbeat",
             level: 100,
             symbol:
-              "https://i.postimg.cc/DZSsNzMB/5BF06FFB38AAF2B394F89F6270D328D5.png",
+              "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-30.jpg",
             name: "初识心动",
-            description: "心跳是故事的开始。",
+            description: "故事开始。",
           },
           {
-            id: "shining_star",
-            level: 300,
+            id: "burning_pervade",
+            level: 200,
             symbol:
-              "https://i.postimg.cc/L47gJRb3/7227080E4BF5950D1B182043D1F734DB.png",
+              "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-31.jpg",
+            name: "焰火弥漫",
+            description: "我们感情逐渐升温。",
+          },
+          {
+            id: "starlight_shining",
+            level: 520,
+            symbol:
+              "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-32.jpg",
             name: "星光闪烁",
-            description: "你们的关系像星光一样开始闪耀。",
-          },
-          {
-            id: "burning_passion",
-            level: 700,
-            symbol:
-              "https://i.postimg.cc/yNQcnRvT/BD0C0CC3C6692D736014BACE73C07F8E.png",
-            name: "热情如火",
-            description: "每一次互动都让感情升温。",
+            description: "我们像星星一样夺目",
           },
           {
             id: "only_crown",
             level: 1500,
             symbol:
-              "https://i.postimg.cc/B6jDzvVh/92DD1E30EFEEC589E3BE0FFB630F8B4E.png",
+              "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-33.jpg",
             name: "唯一王冠",
-            description: "在彼此的世界里，对方是独一无二的存在。",
+            description: "在彼此的世界里，我们独一无二存在。",
           },
           {
-            id: "eternal_diamond",
+            id: "eternal_heart",
             level: 5000,
             symbol:
-              "https://i.postimg.cc/C1RD2KQc/B0E2B3034728540DA4198357D5B8131C.png",
-            name: "永恒之钻",
-            description: "你们的关系如钻石般坚固而璀璨。",
+              "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-38.jpg",
+            name: "永恒之心",
+            description: "我们至死不渝。",
           },
         ];
 
@@ -53010,7 +53010,7 @@ ${libraryList}
               await db.qzoneSettings.put({
                 id: "main",
                 nickname: "我",
-                avatar: "https://files.catbox.moe/q6z5fc.jpeg",
+                avatar: "",
               });
               fixCount++;
             }
@@ -53212,7 +53212,7 @@ ${libraryList}
         window.getAvatarForName = function (name) {
           const lib = window.state.passerbyAvatars || [];
           if (lib.length === 0)
-            return "https://i.postimg.cc/PxZrFFFL/o-o-1.jpg"; // 默认头像
+            return "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-21.jpg"; // 默认头像
 
           // 简单的哈希算法，将名字转为数字
           let hash = 0;
@@ -55767,10 +55767,10 @@ ${libraryList}
                   : "none";
                 document.getElementById("char-video-image-preview").src =
                   chat.settings.charVideoImage ||
-                  "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png";
+                  "";
                 document.getElementById("user-video-image-preview").src =
                   chat.settings.userVideoImage ||
-                  "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png";
+                  "";
                 const voiceAccessSwitch = document.getElementById(
                   "video-call-voice-access-switch",
                 );
@@ -57433,7 +57433,7 @@ ${libraryList}
                       .first();
                     updateData.coverUrl = nextPhoto
                       ? nextPhoto.url
-                      : "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png";
+                      : "";
                   }
 
                   await db.qzoneAlbums.update(state.activeAlbumId, updateData);
@@ -57484,7 +57484,7 @@ ${libraryList}
                 const newAlbum = {
                   name: albumName.trim(),
                   coverUrl:
-                    "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png",
+                    "",
                   photoCount: 0,
                   createdAt: Date.now(),
                 };
@@ -62612,9 +62612,9 @@ ${libraryList}
             .addEventListener("click", () => {
               // 清空输入
               document.getElementById("new-couple-my-avatar-preview").src =
-                "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png";
+                "";
               document.getElementById("new-couple-char-avatar-preview").src =
-                "https://i.postimg.cc/pT2xKzPz/album-cover-placeholder.png";
+                "";
               document.getElementById("new-couple-desc-input").value = "";
               document.getElementById("new-couple-my-avatar-input").value = "";
               document.getElementById("new-couple-char-avatar-input").value =
