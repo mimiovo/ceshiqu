@@ -256,9 +256,9 @@
                   >
                     <div class="icon-bg-desktop">
                       <img
-                        id="icon-img-wx"
+                        id="icon-img-微信"
                         src=""
-                        alt="wx"
+                        alt="微信"
                       />
                     </div>
                     <span class="label">微信</span>
@@ -13842,7 +13842,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
                 align-items: center;
               "
             >
-              <span>角色数据 (多选,qq动态什么的)</span>
+              <span>角色数据 (多选,微信动态什么的)</span>
               <label
                 style="font-size: 13px; font-weight: normal; cursor: pointer"
               >
@@ -17659,7 +17659,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 
         const DEFAULT_APP_ICONS = {
           "world-book": "",
-          wx: "",
+          微信: "",
           "api-settings": "",
           wallpaper: "",
           font: "",
@@ -17677,7 +17677,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
         };
 
         const DEFAULT_APP_LABELS = {
-          wx: "微信",
+          微信: "微信",
           "world-book": "世界书",
           "api-settings": "API设置",
           wallpaper: "外观设置",
@@ -17695,7 +17695,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
           studio: "lrq小剧场",
         };
         const STICKER_REGEX =
-          /^(data:image\/)|(https?:\/\/.*?\.(?:png|jpg|jpeg|gif|webp|svg|bmp|ico|tiff))|(https?:\/\/.*(?:catbox|postimg|imgbb|sinaimg|telegraph|wx[1-4])\..*)/i;
+          /^(data:image\/)|(https?:\/\/.*?\.(?:png|jpg|jpeg|gif|webp|svg|bmp|ico|tiff))|(https?:\/\/.*(?:catbox|postimg|imgbb|sinaimg|telegraph|微信[1-4])\..*)/i;
         const MESSAGE_RENDER_WINDOW = 50;
         let currentRenderedCount = 0;
         let lastKnownBatteryLevel = 1;
@@ -20746,7 +20746,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
               }
               if (!chat.settings.weiboBackground) {
                 chat.settings.weiboBackground =
-                  "https://i.postimg.cc/mk93Y3j1/weibo-bg-default.jpg"; // 给一个默认背景
+                  ""; // 给一个默认背景
               }
               // weiboProfession 和 weiboInstruction 之前已经兼容过了，这里不用重复
             }
@@ -21008,7 +21008,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
             src: keepAliveUrl,
             // 使用 API设置 的图标作为封面
             cover:
-              "https://i.postimg.cc/y8YfDNNr/D9FD94FC0A3523D02D9EE3A7B0F57396.png",
+              "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-1.jpg",
             isLocal: false,
             lrcContent:
               "[00:00.00]⚠️ 后台保活运行中...\n[00:02.00]此音频无声\n[00:05.00]用于防止API请求中断\n[99:99.99]End",
@@ -21028,13 +21028,13 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
           state.qzoneSettings = qzoneSettings || {
             id: "main",
             nickname: "{{user}}",
-            avatar: "https://files.catbox.moe/q6z5fc.jpeg",
-            banner: "https://files.catbox.moe/r5heyt.gif",
-            weiboAvatar: "https://files.catbox.moe/q6z5fc.jpeg",
+            avatar: "",
+            banner: "",
+            weiboAvatar: "",
             weiboNickname: "你的昵称",
             weiboFansCount: "0",
             weiboBackground:
-              "https://i.postimg.cc/mk93Y3j1/weibo-bg-default.jpg",
+              "",
 
             weiboUserProfession: "点击设置职业",
             weiboUserPersona: "一个普通的微博用户。",
@@ -21044,7 +21044,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
           if (!state.qzoneSettings.weiboAvatar)
             state.qzoneSettings.weiboAvatar =
               state.qzoneSettings.avatar ||
-              "https://files.catbox.moe/q6z5fc.jpeg";
+              "";
           if (!state.qzoneSettings.weiboNickname)
             state.qzoneSettings.weiboNickname =
               state.qzoneSettings.nickname || "你的昵称";
@@ -21052,7 +21052,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
             state.qzoneSettings.weiboFansCount = "0";
           if (!state.qzoneSettings.weiboBackground)
             state.qzoneSettings.weiboBackground =
-              "https://i.postimg.cc/mk93Y3j1/weibo-bg-default.jpg";
+              "";
 
           if (!state.qzoneSettings.weiboUserProfession)
             state.qzoneSettings.weiboUserProfession = "点击设置职业";
@@ -37315,7 +37315,7 @@ ${libraryList}
 
           const appLabels = {
             "world-book": "世界书",
-            qq: "QQ",
+            微信: "微信",
             "api-settings": "API设置",
             wallpaper: "壁纸",
             font: "字体",
