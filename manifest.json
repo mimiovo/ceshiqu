@@ -1,19 +1,14 @@
 {
-  "name": "萌萌日记",
-  "short_name": "萌萌日记",
+  "name": "我和许今闻的家",
+  "short_name": "我们的家",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-1.jpg",
+      "src": "icon.png",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://raw.githubusercontent.com/mimiovo/1/refs/heads/main/xiaotubiao/IMG-1.jpg",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ]
