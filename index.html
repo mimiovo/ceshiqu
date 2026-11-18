@@ -63097,77 +63097,6 @@ ${libraryList}
 
           document.body.prepend(overlay);
 
-          // 4. 事件绑定
-          const submitBtn = document.getElementById("btn-login-submit");
-          const resetBtn = document.getElementById("btn-login-reset");
-          const uidInput = document.getElementById("login-uid");
-          const pwdInput = document.getElementById("login-pwd");
-
-          function handleLoginTrigger() {
-            const msg = document.getElementById("login-msg");
-            if (msg) msg.textContent = "CONNECTING...";
-            setTimeout(() => {
-              if (typeof tryLogin === "function") {
-                tryLogin();
-              } else {
-                console.error("tryLogin function missing");
-              }
-            }, 200);
-          }
-
-          submitBtn.onclick = handleLoginTrigger;
-          resetBtn.onclick = () => {
-            pwdInput.value = "";
-            const msg = document.getElementById("login-msg");
-            if (msg) msg.textContent = "CLEARED";
-            pwdInput.focus();
-          };
-          pwdInput.onkeypress = function (e) {
-            if (e.key === "Enter") handleLoginTrigger();
-          };
-
-          const bindVisualEffect = (btn) => {
-            const down = () => {
-              btn.style.transform = "translateY(6px)";
-              btn.style.boxShadow = "none";
-            };
-            const up = () => {
-              btn.style.transform = "translateY(0)";
-              btn.style.boxShadow =
-                "0 6px 0 rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.1)";
-            };
-            btn.addEventListener("mousedown", down);
-            btn.addEventListener("mouseup", up);
-            btn.addEventListener("mouseleave", up);
-            btn.addEventListener("touchstart", down, { passive: true });
-            btn.addEventListener("touchend", up);
-          };
-          bindVisualEffect(submitBtn);
-          bindVisualEffect(resetBtn);
-        }
-
-        // 2. 验证与启动函数
-        async function tryLogin() {
-          // 获取元素
-          const uidEl = document.getElementById("login-uid");
-          const pwdEl = document.getElementById("login-pwd");
-          const msgEl = document.getElementById("login-msg");
-          const submitBtn = document.getElementById("btn-login-submit");
-
-          // 安全检查
-          if (!uidEl || !pwdEl) {
-            console.error("找不到登录输入框，请刷新页面");
-            return;
-          }
-
-          const uid = uidEl.value.trim();
-          const pwd = pwdEl.value.trim();
-
-          if (!uid || !pwd) {
-            msgEl.textContent = "请输入完整的账号和密码";
-            if (msgEl) msgEl.style.color = "#ff453a"; // 红色警告
-            return;
-          }
 
           // 1. 设置加载状态
           msgEl.style.color = "#fab1a0"; // 恢复默认颜色
@@ -63214,6 +63143,80 @@ ${libraryList}
                 setTimeout(() => overlay.remove(), 500);
               }
 
+              // 启动 App
+              init();
+            } else {
+              // --- 验证失败 (业务逻辑拒绝，如密码错误) ---
+              throw new Error(data.message || "账号或密码错误");
+            }
+          } catch (error) {
+            // --- 错误处理 ---
+            console.error("登录出错:", error);
+            msgEl.style.color = "#ff453a"; // 红色警告
+            // 显示具体错误信息，如果是网络错误显示"网络连接失败"
+            msgEl.textContent = error.message.includes("fetch")
+              ? "网络连接失败"
+              : error.message || "验证失败";
+
+            // 按钮视觉反馈 (变红一下)
+            if (submitBtn) {
+              const originalBg = submitBtn.style.background;
+              submitBtn.style.background = "#ff453a";
+              setTimeout(
+                () => (submitBtn.style.background = originalBg || ""),
+                500,
+              );
+              submitBtn.disabled = false; // 恢复按钮可用
+            }
+          }
+        }
+
+        // ==========================================
+        // ▼▼▼ 自动登录判断 (主入口) ▼▼▼
+        // ==========================================
+
+        // 检查本地是否已登录
+        const savedUid = localStorage.getItem("ephone_saved_uid");
+
+        if (savedUid) {
+          console.log(`[Auto Login] 检测到已登录账号: ${savedUid}`);
+          try {
+            // 已登录：直接初始化数据库并启动，不显示登录框
+            initDatabase(savedUid);
+            init();
+          } catch (e) {
+            console.error("自动登录出错，重置状态:", e);
+            localStorage.removeItem("ephone_saved_uid");
+            renderLoginOverlay();
+          }
+        } else {
+          // 未登录：显示登录框
+          renderLoginOverlay();
+        }
+
+        // ==========================================
+        // ▼▼▼ 退出登录按钮事件绑定 ▼▼▼
+        // ==========================================
+        // 放在一个定时器里，确保 logout-btn 已经加载出来
+        setTimeout(() => {
+          const logoutBtn = document.getElementById("logout-btn");
+          if (logoutBtn) {
+            // 移除旧的监听器防止重复
+            const newBtn = logoutBtn.cloneNode(true);
+            logoutBtn.parentNode.replaceChild(newBtn, logoutBtn);
+
+            newBtn.addEventListener("click", async () => {
+              // 使用原生的 confirm，防止 showCustomConfirm 没加载
+              if (confirm("确定要退出登录吗？")) {
+                localStorage.removeItem("ephone_saved_uid");
+                window.location.reload();
+              }
+            });
+          }
+        }, 1000);
+
+        /*
+         * ===================================================================
          * === 全局接口 (Public API for other scripts) ===
          * ===================================================================
          * 将主应用的核心功能暴露给其他脚本文件（如 game-hall.js）使用
