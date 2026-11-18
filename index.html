@@ -63097,6 +63097,77 @@ ${libraryList}
 
           document.body.prepend(overlay);
 
+          // 4. 事件绑定
+          const submitBtn = document.getElementById("btn-login-submit");
+          const resetBtn = document.getElementById("btn-login-reset");
+          const uidInput = document.getElementById("login-uid");
+          const pwdInput = document.getElementById("login-pwd");
+
+          function handleLoginTrigger() {
+            const msg = document.getElementById("login-msg");
+            if (msg) msg.textContent = "CONNECTING...";
+            setTimeout(() => {
+              if (typeof tryLogin === "function") {
+                tryLogin();
+              } else {
+                console.error("tryLogin function missing");
+              }
+            }, 200);
+          }
+
+          submitBtn.onclick = handleLoginTrigger;
+          resetBtn.onclick = () => {
+            pwdInput.value = "";
+            const msg = document.getElementById("login-msg");
+            if (msg) msg.textContent = "CLEARED";
+            pwdInput.focus();
+          };
+          pwdInput.onkeypress = function (e) {
+            if (e.key === "Enter") handleLoginTrigger();
+          };
+
+          const bindVisualEffect = (btn) => {
+            const down = () => {
+              btn.style.transform = "translateY(6px)";
+              btn.style.boxShadow = "none";
+            };
+            const up = () => {
+              btn.style.transform = "translateY(0)";
+              btn.style.boxShadow =
+                "0 6px 0 rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.1)";
+            };
+            btn.addEventListener("mousedown", down);
+            btn.addEventListener("mouseup", up);
+            btn.addEventListener("mouseleave", up);
+            btn.addEventListener("touchstart", down, { passive: true });
+            btn.addEventListener("touchend", up);
+          };
+          bindVisualEffect(submitBtn);
+          bindVisualEffect(resetBtn);
+        }
+
+        // 2. 验证与启动函数
+        async function tryLogin() {
+          // 获取元素
+          const uidEl = document.getElementById("login-uid");
+          const pwdEl = document.getElementById("login-pwd");
+          const msgEl = document.getElementById("login-msg");
+          const submitBtn = document.getElementById("btn-login-submit");
+
+          // 安全检查
+          if (!uidEl || !pwdEl) {
+            console.error("找不到登录输入框，请刷新页面");
+            return;
+          }
+
+          const uid = uidEl.value.trim();
+          const pwd = pwdEl.value.trim();
+
+          if (!uid || !pwd) {
+            msgEl.textContent = "请输入完整的账号和密码";
+            if (msgEl) msgEl.style.color = "#ff453a"; // 红色警告
+            return;
+          }
 
           // 1. 设置加载状态
           msgEl.style.color = "#fab1a0"; // 恢复默认颜色
